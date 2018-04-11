@@ -1,0 +1,6 @@
+{
+  "id":     "base",
+  "paths":  "scripts/",
+  "inputs": "scripts/app.js",
+  "output-charset": "UTF-8"
+}

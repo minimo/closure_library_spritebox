@@ -1,0 +1,37 @@
+closure-library テスト手順
+
+config.jsonを準備
+{
+  "id": "integration-test",
+  "paths": "testdata",
+  "inputs": "testdata/example/main.js",
+  "output-charset": "UTF-8"
+}
+
+id
+srciptタグのsrc属性で使うクエリパラメータidの値として使用するもの。
+plovrは複数の設定ファイルをインスタンス化出来るので、idの値はユニークなものにしなければならない。
+
+paths
+{string|Array.}で、コンパイル対象になるソースがあるディレクトリを指定する。
+
+inputs
+{string|Array.}で、コンパイルに含めるJSファイルを指定する。
+
+Binフォルダを作成して、plovr.jarを入れておく
+
+リアルタイムコンパイル
+java -jar bin/plovr.jar serve config.json
+
+index.htmlをそのままブラウザで参照。
+変更はリアルタイムコンパイルが実行されていれば、即時でコンパイルされ、ブラウザ表示を更新すれば反映される。
+
+
+ビルド
+java -jar bin/plovr.jar build plovr_config.json
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+.container {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.container li {
+  float: left;
+  background: #eee;
+  margin: 0 10px;
+}
