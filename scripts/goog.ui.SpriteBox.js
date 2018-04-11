@@ -7,14 +7,11 @@ goog.require('goog.events.EventHandler');
 goog.require('goog.ui.SpriteBoxItem');
 
 //コンストラクタ
-goog.ui.SpriteBox = function(param, opt_label, opt_domHelper){
+goog.ui.SpriteBox = function(options, opt_label, opt_domHelper){
   goog.ui.Component.call(this,opt_domHelper); //基底クラスのコンストラクタ呼び出し
 
   this.label_ = opt_label || 'Click Me';
   this.eh_ = new goog.events.EventHandler(this);
-
-  //パラメータ取得
-  this.param_ = param;
 
   this.initialize_();
 }
@@ -31,11 +28,6 @@ goog.ui.SpriteBox.prototype.createDom = function(){
   //大元のDivを作成
   var rootDiv = this.dom_.createElement('div');
   this.decorateInternal(rootDiv);
-
-  var item = new goog.ui.SpriteBoxItem();
-  this.addItem(item);
-  var item = new goog.ui.SpriteBoxItem();
-  this.addItem(item);
 };
 
 goog.ui.SpriteBox.prototype.decorateInternal = function(element){
